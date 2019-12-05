@@ -6,10 +6,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" routerLink="/student-list">Student List</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>
@@ -21,32 +21,4 @@
   </div>
 </nav>
 
-<div class="container">
-
-  <div class="message" *ngIf="isShow">
-    <div class="alert alert-success" role="alert" *ngIf="isSuccess">
-      Đăng nhập thành công!
-    </div>
-    <div class="alert alert-danger" role="alert" *ngIf="!isSuccess">
-      Đăng nhập thất bại
-    </div>
-  </div>
-
-  <form [formGroup]="userForm">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Username</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="username">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
-    </div>
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
-  </form>
-
-</div>
+<router-outlet></router-outlet>
