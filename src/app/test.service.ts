@@ -11,14 +11,6 @@ export class TestService {
 
   getAllStudents(): Observable<any> {
     const url = 'http://localhost:5000/api/students';
-    const token = localStorage.getItem('ACCESS_TOKEN');
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + token
-      })
-    };
-
-    return this.httpClient.get( url, httpOptions);
+    return this.httpClient.get( url);
   }
 }
